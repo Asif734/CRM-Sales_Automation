@@ -1,0 +1,27 @@
+pandas
+python-dotenv
+requests
+fastapi
+uvicorn
+# FastAPI & Server
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Pydantic
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Data Processing
+pandas==2.1.4
+
+# AI/LLM
+groq==0.4.2
+
+# Email
+aiosmtplib==3.0.1
+email-validator==2.1.0
+
+# Utils
+python-dotenv==1.0.0
+aiofiles==23.2.1

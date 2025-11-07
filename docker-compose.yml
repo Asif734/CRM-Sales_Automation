@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: crm-mailhog
+    ports:
+      - "1025:1025"  # SMTP server
+      - "8025:8025"  # Web UI
+    networks:
+      - crm-network
+
+  crm-api:
+    build: .
+    container_name: crm-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - SMTP_HOST=mailhog
+      - SMTP_PORT=1025
+      - LOG_LEVEL=INFO
+    depends_on:
+      - mailhog
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+networks:
+  crm-network:
+    driver: bridge
