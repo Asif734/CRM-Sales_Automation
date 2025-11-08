@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
-from app.api.routes import health, leads, campaigns
+from app.routes import health, leads, campaign
 
 settings = get_settings()
 
@@ -38,7 +38,7 @@ app.add_middleware(
 # Include routers
 app.include_router(health.router, tags=["Health"])
 app.include_router(leads.router, prefix="/api/v1/leads", tags=["Leads"])
-app.include_router(campaigns.router, prefix="/api/v1/campaigns", tags=["Campaigns"])
+app.include_router(campaign.router, prefix="/api/v1/campaigns", tags=["Campaigns"])
 
 
 @app.get("/")

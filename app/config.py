@@ -12,14 +12,14 @@ class Settings(BaseSettings):
     
     # Groq LLM
     groq_api_key: str
-    groq_model: str = "mixtral-8x7b-32768"
+    groq_model: str = "llama-3.1-8b-instant"
     groq_temperature: float = 0.7
     groq_max_tokens: int = 1024
     
     # SMTP
     smtp_host: str = "mailhog"
     smtp_port: int = 1025
-    smtp_from_email: str = "sales@yourcompany.com"
+    smtp_from_email: str = "sales@softstandard.com"
     smtp_from_name: str = "Sales Team"
     
     # File Paths
