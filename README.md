@@ -140,3 +140,8 @@ Campaign reports are automatically generated in the `reports/` directory in Mark
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+## Screenshot of fastapi swagger
+
+![test](data/crm.png)
